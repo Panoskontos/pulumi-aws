@@ -6,10 +6,10 @@ import * as awsx from "@pulumi/awsx";
 var buckets = ["pulumi-1","pulumi-2","pulumi-3"]
 var mynames:any[] = []
 
-// Create an AWS resource (S3 Bucket)
+// Create many AWS s3 buckets
 buckets.map((name)=>{
     const bucket = new aws.s3.Bucket(name);
-    // Export the name of the bucket
+    // Export the name of the buckets
     mynames.push(bucket.id);
 })
 
